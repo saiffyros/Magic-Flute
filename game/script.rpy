@@ -2,6 +2,52 @@
 
 define e = Character("Narrator")
 
+image outside:
+    "g2.png"
+    pause 0.28
+    "g3.png"
+    pause 0.28
+    "g4.png"
+    pause 0.28
+    "g5.png"
+    pause 0.28
+    "g4.png"
+    pause 0.28
+    "g3.png"
+    pause 0.28
+    "g2.png"
+    pause 0.28
+    repeat
+
+transform rotation:
+    around (.5, .5) alignaround (.5, .5) xalign .5 yalign .5
+    rotate 0
+    linear 10 rotate 360
+    repeat
+
+image car:
+    "car_04.png"
+    pause 0.28
+    "car_05.png"
+    pause 0.28
+    "car_06.png"
+    pause 0.28
+    repeat
+
+image road:
+    "a20a.png"
+    subpixel True
+    xalign 0.0
+    linear 1.0 xalign 1.0
+    repeat
+
+image road2:
+    "a20.png"
+    subpixel True
+    yalign 1.0 xalign 1.0
+    linear 1.0 xalign 0.0 yalign 0.0
+    repeat
+
 image room1:
     "renatoExample_Animation03.png"
     pause 0.28
@@ -50,32 +96,36 @@ init python:
         renpy.pause(sec)
         renpy.hide_screen("balloon")
 
+
+label main_menu:
+    return
+
 label start:
 
     show room1
 
-    $ say("John", "Hello, let's test this feature", .8, .2, 5)
-    $ say("Sara", "Hello, How are you?", .2, .8, 5)
-    $ say("", "Talk to me!!!!!")
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Sara", "Eu sou um balão", .2, .8, 5)
+    $ say("", "Olha aqui!!!!!")
 
     show screen overlay1
 
-    $ say("John", "Hello, let's test this feature", .8, .2, 5)
-    $ say("Sara", "Hello, How are you?", .2, .8, 5)
-    $ say("", "Talk to me!!!!!")
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Sara", "Eu sou um balão", .2, .8, 5)
+    $ say("", "Olha aqui!!!!!")
 
     show screen overlay2
 
-    $ say("John", "Hello, let's test this feature", .8, .2, 5)
-    $ say("Sara", "Hello, How are you?", .2, .8, 5)
-    $ say("", "Talk to me!!!!!")
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Sara", "Eu sou um balão", .2, .8, 5)
+    $ say("", "Olha aqui!!!!!")
 
     show screen overlay3 with dissolve
 
 
-    $ say("John", "Hello, let's test this feature", .8, .2, 5)
-    $ say("Sara", "Hello, How are you?", .2, .8, 5)
-    $ say("", "Talk to me!!!!!")
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Sara", "Eu sou um balão", .2, .8, 5)
+    $ say("", "Olha aqui!!!!!")
 
     jump start2
 
@@ -87,15 +137,29 @@ label start2:
     show background1:
         subpixel True
         xalign 1.0
-        linear 4.0 xalign 0.0
+        linear 3.0 xalign 0.0
 
-    pause 4.0
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Sara", "Eu sou um balão", .2, .8, 5)
+    $ say("", "Olha aqui!!!!!")
 
-    $ say("John", "Hello, let's test this feature", .8, .2, 5)
-    $ say("Sara", "Hello, How are you?", .2, .8, 5)
-    $ say("", "Talk to me!!!!!")
+    jump start3
 
+label start3:
+    show outside
+    pause 7.0
+    $ say("", "Olha aqui!!!!!")
+    show g6 with dissolve
+    pause 5.0
+    $ say("", "Olha aqui!!!!!")
 
+    show road
+    show car
+    pause 7.0
+
+    ""
+
+    return
 
 screen balloon(text1, text2, posx1, posy1):
 

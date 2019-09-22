@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 81: expected 'image_name_component' not found.
-    show "background.png":
-         ^
+File "game/script.rpy", line 32: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation.
+    subpixel True
+    ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Mon Sep 16 01:14:41 2019
+Sun Sep 22 01:15:55 2019
