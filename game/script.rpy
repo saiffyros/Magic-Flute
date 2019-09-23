@@ -1,22 +1,20 @@
-﻿
-
-define e = Character("Narrator")
+﻿define e = Character("Narrator")
 
 image outside:
     "g2.png"
-    pause 0.28
+    pause 0.2
     "g3.png"
-    pause 0.28
+    pause 0.2
     "g4.png"
-    pause 0.28
+    pause 0.2
     "g5.png"
-    pause 0.28
+    pause 0.2
     "g4.png"
-    pause 0.28
+    pause 0.2
     "g3.png"
-    pause 0.28
+    pause 0.2
     "g2.png"
-    pause 0.28
+    pause 0.2
     repeat
 
 transform rotation:
@@ -26,11 +24,11 @@ transform rotation:
     repeat
 
 image car:
-    "car_04.png"
+    "car_06.png"
     pause 0.28
     "car_05.png"
     pause 0.28
-    "car_06.png"
+    "car_04.png"
     pause 0.28
     repeat
 
@@ -96,7 +94,6 @@ init python:
         renpy.pause(sec)
         renpy.hide_screen("balloon")
 
-
 label main_menu:
     return
 
@@ -122,7 +119,6 @@ label start:
 
     show screen overlay3 with dissolve
 
-
     $ say("João", "Vamos testar isso aqui", .8, .2, 5)
     $ say("Sara", "Eu sou um balão", .2, .8, 5)
     $ say("", "Olha aqui!!!!!")
@@ -146,19 +142,46 @@ label start2:
     jump start3
 
 label start3:
-    show outside
+    show outside with dissolve
     pause 7.0
-    $ say("", "Olha aqui!!!!!")
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
     show g6 with dissolve
     pause 5.0
-    $ say("", "Olha aqui!!!!!")
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+
+    show a22a:
+        xalign 0.0
 
     show road
     show car
-    pause 7.0
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+
+    show a22a:
+        subpixel True
+        xalign 0.0
+        linear 2.0 xalign 1.0
+    hide road
+    pause 1.5
+    hide car
+    show car_04
+
+    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+
+    show a21 with dissolve
+    pause 1.0
+    show a21a with dissolve
+    pause 1.0
+    show a21b with dissolve
+    pause 1.0
+    show a21c with dissolve
+    play sound "audio/door.mp3"
+    pause 0.5
+    show black_background with dissolve
+    pause 5.0
+
+    call screen input_screen()
 
     ""
-
     return
 
 screen balloon(text1, text2, posx1, posy1):
@@ -178,6 +201,13 @@ screen balloon(text1, text2, posx1, posy1):
     key "mousedown_1" action Hide("balloon")
 
 ################################################################
+
+screen input_screen():
+    window:
+        has vbox
+
+        text "Enter your name."
+        input default "Joseph P. Blow, ESQ."
 
 screen overlay1:
     add "overlay1.png":
