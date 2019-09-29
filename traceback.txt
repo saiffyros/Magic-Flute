@@ -1,58 +1,62 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/script.rpy:37
-  File "game/script.rpy", line 142, in script
-    pause 5.0
-  File "renpy/common/000statements.rpy", line 414, in execute_pause
-    renpy.with_statement(Pause(delay))
-Exception: Expression u'1.0' is not an ATL transform, and so cannot be included in an ATL interpolation.
+While loading <'Image' u'main_menu.png'>:
+IOError: Couldn't find file 'main_menu.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 142, in script
-    pause 5.0
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1947, in execute
-    self.call("execute")
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1935, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\statements.py", line 277, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 414, in execute_pause
-    renpy.with_statement(Pause(delay))
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\exports.py", line 1592, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2248, in do_with
-    clear=clear)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 912, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 2004, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ui.py", line 295, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2699, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3091, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 531, in visit_all
-    for d in self.visit():
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\atl.py", line 582, in visit
-    block = self.compile()
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\atl.py", line 489, in compile
-    block = self.atl.compile(self.context)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\atl.py", line 684, in compile
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\atl.py", line 952, in compile
-    raise Exception("Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr)
-Exception: Expression u'1.0' is not an ATL transform, and so cannot be included in an ATL interpolation.
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3191, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2091, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 546, in renpy.display.render.render_screen
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 675, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\im.py", line 584, in render
+    return cache.get(self, render=True)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\im.py", line 629, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'main_menu.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 Philosophy_Education 1.0
-Sun Sep 22 00:59:34 2019
+Sun Sep 29 19:27:13 2019

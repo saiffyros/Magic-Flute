@@ -94,8 +94,8 @@ init python:
         renpy.pause(sec)
         renpy.hide_screen("balloon")
 
-label main_menu:
-    return
+# label main_menu:
+#     return
 
 label start:
 
@@ -207,7 +207,7 @@ screen input_screen():
         has vbox
 
         text "Enter your name."
-        input default "Joseph P. Blow, ESQ."
+        input default ""
 
 screen overlay1:
     add "overlay1.png":
@@ -231,3 +231,33 @@ screen overlay3:
     add "fishRotating":
         xalign .05
         yalign .5
+
+
+screen main_menu():
+
+
+    # This ensures that any other menu screen is replaced.
+    tag menu
+
+    # The background of the main menu.
+    window:
+        style "mm_root"
+
+    add "main_menu.png" #IMAGEM VAI AQUI
+
+    # The main menu buttons.
+    frame:
+        style_prefix "mm"
+        xalign .98
+        yalign .98
+
+        has vbox
+
+        textbutton _("Start Game") action Start()
+        textbutton _("Load Game") action ShowMenu("load")
+        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Help") action Help()
+        textbutton _("Quit") action Quit(confirm=False)
+
+style mm_button:
+    size_group "mm"
