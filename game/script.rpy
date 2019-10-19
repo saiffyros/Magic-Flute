@@ -112,14 +112,14 @@ label start:
 
     show screen overlay1
 
-    $ say("Jonas", "É uma sensação de que algo está errado. \nsem saber precisar o que.", .9, .35)
+    $ say("Jonas", "É uma sensação de que algo está errado. \nsem saber precisar o que.", .99, .35)
     $ say("Jonas", "Mas eu sinto em toda esquina.", .9, .35)
-    $ say("Jonas", "O cheiro das pessoas, o cheiro de cigarro,\n os olhares... tudo isso me incomoda.", .9, .35)
+    $ say("Jonas", "O cheiro das pessoas, o cheiro de cigarro,\n os olhares... tudo isso me incomoda.", .99, .35)
     $ say("Jonas", "Mas tem algo ainda pior.", .9, .35)
     $ say("Jonas", "Muito mais.", .9, .35)
     $ say("Mauro", "E o que é?", .4, .3)
-    $ say("Jonas", "Há nas pessoas um desejo que ofende meu olfato.", .9, .35)
-    $ say("Jonas", "Ao sair lá fora eu só vejo almas penadas,\n agarradas à fagulhas de felicidade e prazer.", .9, .35)
+    $ say("Jonas", "Há nas pessoas um desejo que ofende meu olfato.", .99, .35)
+    $ say("Jonas", "Ao sair lá fora eu só vejo almas penadas,\n agarradas à fagulhas de felicidade e prazer.", .99, .35)
     $ say("Jonas", "Isso é tudo que conseguem.", .9, .35)
     $ say("Jonas", "Ninguém inspira respeito de verdade.", .9, .35)
     $ say("Mauro", "E apesar de tudo isso \nvocê não se compadece?\n Não pensa algo como....", .2, .35)
@@ -133,16 +133,16 @@ label start:
 
     $ say("Jonas", "Tentando suportar o tormento que é \nestar preso a este mundo sujo.", .2, .9)
     $ say("Jonas", "Que nós mesmos criamos.", .2, .9)
-    $ say("Mauro", "E no entanto você tem pena deles", .4, .1)
+    $ say("Mauro", "E no entanto você tem pena deles.", .4, .1)
     $ say("Jonas", "Ou será que é pena de mim mesmo \no que eu sinto?", .2, .9)
     $ say("Jonas", "Enfim...", .2, .9)
     $ say("Jonas", "Será que você pode me dar algum \noutro remédio?", .2, .9)
 
     show screen overlay3 with dissolve
 
-    $ say("Mauro", "Podemos ver esta possibilidade\n na próxima consulta", .4, .1)
+    $ say("Mauro", "Podemos ver esta possibilidade\n na próxima consulta.", .4, .1)
     $ say("Mauro", "Aconteceu algo no trabalho?", .4, .1)
-    $ say("Mauro", "Parece mais afetado de que de costume.", .4, .1)
+    $ say("Mauro", "Parece mais afetado do que de costume.", .4, .1)
     $ say("Jonas", "Nada digno de nota.", .2, .9)
     $ say("Mauro", "Continue mantendo o seu diário.", .4, .1)
     $ say("Mauro", "Vamos voltar a ele na próxima seção.", .4, .1)
@@ -160,27 +160,27 @@ label start2:
         xalign 1.0
         linear 3.0 xalign 0.0
 
+    $ renpy.pause(3)
+
     $ say("Jonas", "Podemos ver esta possibilidade\n na próxima consulta.", .3, .1, 2.5)
-    $ say("Jonas", "O que você acha Jonas?.", .35, .25)
-    $ say("Jonas", "O que está pensando Jonas?.", .5, .35)
+    $ say("Jonas", "O que você acha Jonas?", .35, .25)
+    $ say("Jonas", "O que está pensando Jonas?", .5, .35)
     $ say("Jonas", "Palhaço.", .7, .35)
 
     jump start3
 
 label start3:
     show outside with dissolve
-    pause 7.0
     $ say("Jonas", "Um homem que não traz consigo uma imagem futura de si mesmo,\n ainda que opaca e confusa é tão monstruoso quanto um homem sem nariz.", .7, .4)
     $ say("Jonas", "É óbvio que estou falando da ausência de\n planos e objetivos claros para o futuro.", .8, .2)
     show g6 with dissolve
-    pause 5.0
     $ say("Jonas", "E ainda pago pra ouvir isso.", .8, .2)
     $ say("Jonas", "Vou ter que apagar o escrevi dele no diário.", .8, .2)
 
     show a22a:
         xalign 0.0
 
-    play music "ha_tempos.mp3"
+    play music "audio/ha_tempos.mp3"
     $ renpy.music.set_volume(0.05, .05, channel="music")
 
     show road
@@ -207,7 +207,7 @@ label start3:
     $ say("Jonas", "Igrejas são túmulos de Deus...", .8, .2)
     $ say("Jonas", "E no entanto, aqui estou.", .8, .2)
     $ say("Jonas", "Compelido a entrar.", .8, .2)
-    $ say("Jonas", "Bem, não custa nada.", .8, .2)
+    $ say("Jonas", "Bem, não custa nada tentar.", .8, .2)
 
     show a21 with dissolve
     $ renpy.pause(1)
