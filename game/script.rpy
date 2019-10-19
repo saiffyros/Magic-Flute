@@ -101,6 +101,9 @@ label start:
 
     show room1
 
+    play music "audio/flowers_blooming.mp3"
+    $ renpy.music.set_volume(0.02, 0.02, channel="music")
+
     $ say("Jonas", "Um homem que não traz consigo uma imagem futura de si mesmo,\n ainda que opaca e confusa é tão monstruoso quanto um homem sem nariz.", .3, .8)
     $ say("Mauro", "E o que isso quer dizer?", .6, .35)
     $ say("Jonas", "Exatamente o que diz. Você entende o que eu quero dizer?", .45, .8)
@@ -148,13 +151,15 @@ label start:
     $ say("Mauro", "Vamos voltar a ele na próxima seção.", .4, .1)
     $ say("Jonas", "Ok...", .2, .9)
 
+    stop music fadeout 3.0
+
     jump start2
 
 label start2:
     hide screen overlay1 with dissolve
     hide screen overlay2 with dissolve
     hide screen overlay3 with dissolve
-
+    play sound "audio/door.mp3"
     show background1:
         subpixel True
         xalign 1.0
@@ -197,7 +202,7 @@ label start3:
         subpixel True
         xalign 0.0
         linear 2.0 xalign 1.0
-    stop music fadeout 3.0
+    stop music fadeout 4.0
     hide road
     pause 1.5
     hide car
