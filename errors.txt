@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 32: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation.
-    subpixel True
-    ^
+File "game/script.rpy", line 104: EOL while scanning string literal
+(Perhaps you left out a " at the end of the first line.)
+    say("Jonas", "Um homem que não traz consigo uma imagem futura de si mesmo,\n
+    
 
-Ren'Py Version: Ren'Py 7.3.2.320
-Sun Sep 22 01:15:55 2019
+Ren'Py Version: Ren'Py 7.3.4.596
+Fri Oct 18 20:22:01 2019

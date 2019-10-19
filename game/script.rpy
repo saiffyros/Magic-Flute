@@ -83,16 +83,16 @@ image background1 = "background.png"
 
 init python:
 
-    DEFAULT_X = .5
-    DEFAULT_Y = .5
-    DEFAULT_S = 6
     DEFAULT_N = ""
     DEFAULT_T = ""
+    DEFAULT_X = .5
+    DEFAULT_Y = .5
+    DEFAULT_S = 1
 
     def say(character = DEFAULT_N, texting = DEFAULT_T, posx = DEFAULT_X, posy = DEFAULT_Y, sec = DEFAULT_S):
-        renpy.show_screen("balloon", character, texting, posx, posy)
+        renpy.call_screen("balloon", character, texting, posx, posy)
         renpy.pause(sec)
-        renpy.hide_screen("balloon")
+        #renpy.hide_screen("balloon")
 
 # label main_menu:
 #     return
@@ -101,27 +101,52 @@ label start:
 
     show room1
 
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
-    $ say("Sara", "Eu sou um balão", .2, .8, 5)
-    $ say("", "Olha aqui!!!!!")
+    $ say("Jonas", "Um homem que não traz consigo uma imagem futura de si mesmo,\n ainda que opaca e confusa é tão monstruoso quanto um homem sem nariz.", .3, .8)
+    $ say("Mauro", "E o que isso quer dizer?", .6, .35)
+    $ say("Jonas", "Exatamente o que diz. Você entende o que eu quero dizer?", .45, .8)
+    $ say("Mauro", "Sim, mas...", .6, .35)
+    $ say("Jonas", "Mas você quer saber minha interpretação.", .45, .8)
+    $ say("Mauro", "Estamos aqui pra compreender melhor \ncomo você vê o mundo.", .6, .35)
+    $ say("Jonas", "...", .7, .8)
+    $ say("Mauro", "Certo?", .6, .35)
 
     show screen overlay1
 
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
-    $ say("Sara", "Eu sou um balão", .2, .8, 5)
-    $ say("", "Olha aqui!!!!!")
+    $ say("Jonas", "É uma sensação de que algo está errado. \nsem saber precisar o que.", .9, .35)
+    $ say("Jonas", "Mas eu sinto em toda esquina.", .9, .35)
+    $ say("Jonas", "O cheiro das pessoas, o cheiro de cigarro,\n os olhares... tudo isso me incomoda.", .9, .35)
+    $ say("Jonas", "Mas tem algo ainda pior.", .9, .35)
+    $ say("Jonas", "Muito mais.", .9, .35)
+    $ say("Mauro", "E o que é?", .4, .3)
+    $ say("Jonas", "Há nas pessoas um desejo que ofende meu olfato.", .9, .35)
+    $ say("Jonas", "Ao sair lá fora eu só vejo almas penadas,\n agarradas à fagulhas de felicidade e prazer.", .9, .35)
+    $ say("Jonas", "Isso é tudo que conseguem.", .9, .35)
+    $ say("Jonas", "Ninguém inspira respeito de verdade.", .9, .35)
+    $ say("Mauro", "E apesar de tudo isso \nvocê não se compadece?\n Não pensa algo como....", .2, .35)
+    $ say("Mauro", "Aí está, mais um ser humano tentando.", .4, .35)
+    $ say("Jonas", "Tentando o que?", .9, .35)
+    $ say("Mauro", "O que você acha?", .4, .35)
+    $ say("Jonas", "Tentando...", .9, .35)
+    $ say("Mauro", "Tentando o que Jonas?", .4, .35)
 
     show screen overlay2
 
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
-    $ say("Sara", "Eu sou um balão", .2, .8, 5)
-    $ say("", "Olha aqui!!!!!")
+    $ say("Jonas", "Tentando suportar o tormento que é \nestar preso a este mundo sujo.", .2, .9)
+    $ say("Jonas", "Que nós mesmos criamos.", .2, .9)
+    $ say("Mauro", "E no entanto você tem pena deles", .4, .1)
+    $ say("Jonas", "Ou será que é pena de mim mesmo \no que eu sinto?", .2, .9)
+    $ say("Jonas", "Enfim...", .2, .9)
+    $ say("Jonas", "Será que você pode me dar algum \noutro remédio?", .2, .9)
 
     show screen overlay3 with dissolve
 
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
-    $ say("Sara", "Eu sou um balão", .2, .8, 5)
-    $ say("", "Olha aqui!!!!!")
+    $ say("Mauro", "Podemos ver esta possibilidade\n na próxima consulta", .4, .1)
+    $ say("Mauro", "Aconteceu algo no trabalho?", .4, .1)
+    $ say("Mauro", "Parece mais afetado de que de costume.", .4, .1)
+    $ say("Jonas", "Nada digno de nota.", .2, .9)
+    $ say("Mauro", "Continue mantendo o seu diário.", .4, .1)
+    $ say("Mauro", "Vamos voltar a ele na próxima seção.", .4, .1)
+    $ say("Jonas", "Ok...", .2, .9)
 
     jump start2
 
@@ -135,53 +160,71 @@ label start2:
         xalign 1.0
         linear 3.0 xalign 0.0
 
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
-    $ say("Sara", "Eu sou um balão", .2, .8, 5)
-    $ say("", "Olha aqui!!!!!")
+    $ say("Jonas", "Podemos ver esta possibilidade\n na próxima consulta.", .3, .1, 2.5)
+    $ say("Jonas", "O que você acha Jonas?.", .35, .25)
+    $ say("Jonas", "O que está pensando Jonas?.", .5, .35)
+    $ say("Jonas", "Palhaço.", .7, .35)
 
     jump start3
 
 label start3:
     show outside with dissolve
     pause 7.0
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Jonas", "Um homem que não traz consigo uma imagem futura de si mesmo,\n ainda que opaca e confusa é tão monstruoso quanto um homem sem nariz.", .7, .4)
+    $ say("Jonas", "É óbvio que estou falando da ausência de\n planos e objetivos claros para o futuro.", .8, .2)
     show g6 with dissolve
     pause 5.0
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Jonas", "E ainda pago pra ouvir isso.", .8, .2)
+    $ say("Jonas", "Vou ter que apagar o escrevi dele no diário.", .8, .2)
 
     show a22a:
         xalign 0.0
 
+    play music "ha_tempos.mp3"
+    $ renpy.music.set_volume(0.05, .05, channel="music")
+
     show road
     show car
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+
+    $ say("", "Parece cocaína", .8, .2)
+    $ say("", "Mas é só tristeza", .4, .2)
+    $ say("", "Talvez tua cidade", .8, .2)
+    $ say("", "Muitos temores nascem", .4, .2)
+    $ say("", "Do cansaço e da solidão", .8, .2)
+    $ say("", "Descompasso, desperdício", .4, .2)
 
     show a22a:
         subpixel True
         xalign 0.0
         linear 2.0 xalign 1.0
+    stop music fadeout 3.0
     hide road
     pause 1.5
     hide car
     show car_04
 
-    $ say("João", "Vamos testar isso aqui", .8, .2, 5)
+    $ say("Jonas", "Uma igreja...", .8, .2)
+    $ say("Jonas", "Igrejas são túmulos de Deus...", .8, .2)
+    $ say("Jonas", "E no entanto, aqui estou.", .8, .2)
+    $ say("Jonas", "Compelido a entrar.", .8, .2)
+    $ say("Jonas", "Bem, não custa nada.", .8, .2)
 
     show a21 with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     show a21a with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     show a21b with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     show a21c with dissolve
     play sound "audio/door.mp3"
-    pause 0.5
+    $ renpy.pause(.5)
     show black_background with dissolve
-    pause 5.0
+    $ renpy.pause(5)
+
+    ""
 
     call screen input_screen()
 
-    ""
     return
 
 screen balloon(text1, text2, posx1, posy1):
@@ -198,7 +241,7 @@ screen balloon(text1, text2, posx1, posy1):
             xpadding 15
             ypadding 15
 
-    key "mousedown_1" action Hide("balloon")
+    key "mousedown_1" action Return()
 
 ################################################################
 
